@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #000;
+}
+
+.main-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box-shadow: -1px 8px 5px 0px rgba(41,41,41,0.75);
+-webkit-box-shadow: -1px 8px 5px 0px rgba(41,41,41,0.75);
+-moz-box-shadow: -1px 8px 5px 0px rgba(41,41,41,0.75);
+}
+
+.header-container {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.header-title {
+    font-size: 1.3em;
+    font-weight: 600;
+    line-height: 2rem;
+}
+
+.header-navigation-list {
+    display: flex;
+    list-style: none;
+}
+
+.header-navigation-list-item {
+    margin: 0 29px;
+    cursor: pointer;
+}
+
+.header-navigation-list-item a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #fff;
+    transition: 0.3s ease;
+    transition-delay: 0.2;
+}
+
+.header-navigation-list-item a::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 10px;
+    background-color: #ff0000;
+    transition: 0.3s ease;
+    transition-delay: 0.2;
+    transform: scaleX(0);
+}
+
+.header-navigation-list-item a:hover::after {
+    transform: scaleX(1);
+}
+
+.header-navigation-list-item a:hover {
+    color: #ff0000;
+}   
+
+
+
+/* HERO SECTION */
+
+.hero-container {
+    width: 90%;
+    height: 100vh;
+    max-height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    padding: 0 3rem;
+    gap: 1rem;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+
+@keyframes nebulaMove {
+    from {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+        transform: translate(-40%, -40%) scale(1);
+    }
+}
+
+.hero-container::before, .hero-container::after {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.651), transparent);
+    transform: translate(-50%, -50%);
+    filter: blur(100px);
+    overflow: hidden;
+    animation: nebulaMove 5s infinite alternate ease-in-out;
+}
+
+
+.hero-container::before{
+    top: 0;
+    left: 0;
+}
+.hero-container::after{
+    bottom: -500px;
+    right: -500px;
+}
+
+.hero-image-container {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 50%;
+    height: 32rem;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    background-position: center bottom -7rem;
+    background-size: 100%;
+    background-image: url('./assets/img/no-bg-ferta.png');
+    position: relative;
+    filter: grayscale(100);
+}
+
+
+.hero-image::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(to top, black, transparent);
+
+}
+
+
+.hero-title-container {
+    color: white;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+
+.hero-title-container h1 {
+    font-size: 3.2em;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    word-break: break-word;
+    white-space: normal; /* Pastikan teks bisa turun */
+    
+}
+
+.header-title-container h1 span {
+    display: block;
+}
+
+.hero-title-container p {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    line-height: 2em;
+    opacity: 0.5;
+}
+
+.cta-btn {
+    margin-top: 1rem;
+    padding: 1rem 2ch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background: linear-gradient(to right, #ff0000, #000);
+    color: white;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all ease 1s;
+    box-shadow: -1px 8px 5px 0px rgba(41,41,41,0);
+}
+.cta-btn:hover {
+    box-shadow: -1px 8px 5px 0px rgba(41,41,41,0.75);
+
+}
+.name {
+    color: #ff0000;
+
+}
+
+
+/* ABOUT SECTION */
